@@ -11,7 +11,7 @@ void PhoneBook::addField(const std::string& prompt, void (Contact::*setter)(cons
     {
         std::cout << prompt;
         std::getline(std::cin, input);
-        if (std::cin.eof()) return; // handle CTRL+D
+        if (std::cin.eof()) return;
         if (!input.empty())
         {
             (contact.*setter)(input);
