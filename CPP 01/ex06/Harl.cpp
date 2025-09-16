@@ -1,6 +1,7 @@
 #include "Harl.hpp"
 
 Harl::Harl() {}
+
 Harl::~Harl() {}
 
 void Harl::debug( void )
@@ -27,14 +28,27 @@ void Harl::complain( std::string level )
     // std::cout << level << std::endl;
     std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     void (Harl::*funcPtr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-    for (int i = 0; i < 4; i++)
+    int i = 0;
+    while (i < 4)
     {
         if (level == levels[i])
-        {
-            for (int j = i; j < 4; j++)
-                (this->*funcPtr[j])();
-            return;
-        }
+            break ;
+        i++;
     }
-    std::cout << "Invalid level!" << std::endl;
+    switch (i)
+    {
+    case 0:
+        (this->*funcPtr[0])();
+    case 1:
+        (this->*funcPtr[1])();
+    case 2:
+        (this->*funcPtr[2])();
+    case 3:
+        (this->*funcPtr[3])();
+        break;
+    default:
+        std::cout << "[ Probably complaining about insignificant problems ]\n";
+        break;
+    }
+    // std::cout << "Invalid level!" << std::endl;
 }

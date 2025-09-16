@@ -1,4 +1,4 @@
-NAME = Harl
+NAME = harlFilter
 
 SRCS = Harl.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
