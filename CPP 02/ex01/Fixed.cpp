@@ -57,8 +57,8 @@ int Fixed::toInt(void) const
 }
 
 // Non-member operator<<
-std::ostream &operator<<(std::ostream &out, const Fixed &obj)
+std::ostream &operator<<(std::ostream &cout, const Fixed &obj)
 {
-    out << obj.toFloat();
-    return out;
+    cout << obj.toFloat();
+    return cout;
 }

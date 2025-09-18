@@ -13,7 +13,7 @@ class Fixed
         Fixed();
         ~Fixed();
         Fixed(const Fixed &obj);
-        Fixed & operator=(const Fixed &obj);
+        Fixed & operator=(const Fixed &obj); // Do i need it?
         int getRawBits( void ) const;
         void setRawBits( int const raw );
 };
