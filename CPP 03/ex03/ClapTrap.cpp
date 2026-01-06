@@ -3,18 +3,18 @@
 ClapTrap::ClapTrap()
 	: name("Unknown"), hit_point(10), energy_point(10), attack_damage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 	: name(name), hit_point(10), energy_point(10), attack_damage(0)
 {
-	std::cout << "Parameterized constructor called" << std::endl;
+	std::cout << "ClapTrap Parameterized constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj)
@@ -39,10 +39,10 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 	return (*this);
 }
 
-// std::string ClapTrap::getName(void) const
-// {
-// 	return this->name;
-// }
+std::string ClapTrap::getName(void) const
+{
+	return this->name;
+}
 
 void ClapTrap::attack(const std::string& target)
 {
