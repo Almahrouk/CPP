@@ -42,23 +42,12 @@ void Cat::makeSound() const
     std::cout << "Cat makes a sound: Meow meow" << std::endl;
 }
 
-std::string Cat::getType() const
-{
-    return (this->type);
-}
-
-
 void Cat::setIdea(int idx, const std::string& idea)
 {
-    if (!brain || idx < 0 || idx >= 100)
-        return;
-    brain->ideas[idx] = idea;
+    brain->setIdea(idx, idea);
 }
 
 const std::string& Cat::getIdea(int idx) const
 {
-    static const std::string empty = "";
-    if (!brain || idx < 0 || idx >= 100)
-        return empty;
-    return brain->ideas[idx];
+    return brain->getIdea(idx);
 }

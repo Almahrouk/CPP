@@ -20,6 +20,7 @@ Dog::~Dog()
 Dog::Dog(const Dog &obj) : Animal(obj)
 {
 	std::cout << "Dog Copy constructor called" << std::endl;
+	*this = obj;
 }
 
 Dog &Dog::operator=(const Dog &obj)
@@ -34,10 +35,6 @@ Dog &Dog::operator=(const Dog &obj)
 
 void Dog::makeSound() const
 {
-    std::cout << "Dog makes a sound: Woof woof" << std::endl;
+    std::cout << "\033[32m" << "Dog makes a sound: Woof woof" << "\033[0m" << std::endl;
 }
 
-std::string Dog::getType() const
-{
-    return (this->type);
-}

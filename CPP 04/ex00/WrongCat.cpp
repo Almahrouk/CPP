@@ -1,41 +1,34 @@
-# include "Cat.hpp"
+# include "WrongCat.hpp"
 
-Cat::Cat() : Animal("Cat")
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-	std::cout << "Cat Default constructor called" << std::endl;
+	std::cout << "WrongCat Default constructor called" << std::endl;
 }
 
-Cat::Cat(std::string type) : Animal(type)
+WrongCat::WrongCat(std::string type) : WrongAnimal(type)
 {
-	std::cout << "Cat Parameterized constructor called" << std::endl;
+	std::cout << "WrongCat Parameterized constructor called" << std::endl;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "Cat Destructor called" << std::endl;
+	std::cout << "WrongCat Destructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &obj) : Animal(obj)
+WrongCat::WrongCat(const WrongCat &obj) : WrongAnimal(obj)
 {
-	std::cout << "Cat Copy constructor called" << std::endl;
+	std::cout << "WrongCat Copy constructor called" << std::endl;
 }
 
-Cat &Cat::operator=(const Cat &obj)
+WrongCat &WrongCat::operator=(const WrongCat &obj)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &obj)
-	{
 		this->type = obj.type;
-	}
 	return (*this);
 }
 
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
-    std::cout << "Cat makes a sound: Meow meow" << std::endl;
-}
-
-std::string Cat::getType() const
-{
-    return (this->type);
+    std::cout << "\033[31m" << "WrongCat makes a sound: Meow meow" << "\033[0m" << std::endl;
 }

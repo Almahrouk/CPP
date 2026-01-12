@@ -12,6 +12,9 @@ class Brain
 		Brain(const Brain &obj);
 		Brain &operator=(const Brain &obj);
 		~Brain();
+
+		void setIdea(int idx, const std::string& idea);
+		const std::string& getIdea(int idx) const;
 };
 
 #endif

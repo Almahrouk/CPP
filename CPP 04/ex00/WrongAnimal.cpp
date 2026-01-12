@@ -1,29 +1,29 @@
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-Animal::Animal()
-	: type("Animal")
+WrongAnimal::WrongAnimal()
+	: type("WrongAnimal")
 {
-	std::cout << "Animal Default constructor called" << std::endl;
+	std::cout << "WrongAnimal Default constructor called" << std::endl;
 }
 
-Animal::Animal(std::string type)
+WrongAnimal::WrongAnimal(std::string type)
 	: type(type)
 {
-	std::cout << "Animal Parameterized constructor called" << std::endl;
+	std::cout << "WrongAnimal Parameterized constructor called" << std::endl;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal Destructor called" << std::endl;
+	std::cout << "WrongAnimal Destructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &obj)
+WrongAnimal::WrongAnimal(const WrongAnimal &obj)
 	: type(obj.type)
 {
-	std::cout << "Animal Copy constructor called" << std::endl;
+	std::cout << "WrongAnimal Copy constructor called" << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &obj)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &obj)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &obj)
@@ -33,12 +33,12 @@ Animal &Animal::operator=(const Animal &obj)
 	return (*this);
 }
 
-void Animal::makeSound() const
+void WrongAnimal::makeSound() const
 {
-    std::cout << "Animal makes a sound" << std::endl;
+    std::cout << "\033[31m" << "WrongAnimal makes a sound" << "\033[0m" <<  std::endl;
 }
 
-std::string Animal::getType() const
+std::string WrongAnimal::getType() const
 {
     return (this->type);
 }

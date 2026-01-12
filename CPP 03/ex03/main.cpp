@@ -8,7 +8,8 @@ int main()
 {
     DiamondTrap d("123");
     
-    std::cout << d.FragTrap::ClapTrap::getName() << std::endl;    
+    std::cout << d.ClapTrap::getName() << std::endl;    
+    d.whoAmI();
 
     return 0;
 }

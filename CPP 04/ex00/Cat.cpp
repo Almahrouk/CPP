@@ -18,24 +18,19 @@ Cat::~Cat()
 Cat::Cat(const Cat &obj) : Animal(obj)
 {
 	std::cout << "Cat Copy constructor called" << std::endl;
+	*this = obj;
 }
 
 Cat &Cat::operator=(const Cat &obj)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &obj)
-	{
 		this->type = obj.type;
-	}
 	return (*this);
 }
 
 void Cat::makeSound() const
 {
-    std::cout << "Cat makes a sound: Meow meow" << std::endl;
+    std::cout << "\033[32m" << "Cat makes a sound: Meow meow" << "\033[0m" << std::endl;
 }
 
-std::string Cat::getType() const
-{
-    return (this->type);
-}

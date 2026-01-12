@@ -42,21 +42,12 @@ void Dog::makeSound() const
     std::cout << "Dog makes a sound: Woof woof" << std::endl;
 }
 
-std::string Dog::getType() const
+void Dog::setIdea(int idx, const std::string& idea)
 {
-    return (this->type);
-}
-
-void Dog::setIdea(int idx, const std::string& idea) {
-    if (!brain || idx < 0 || idx >= 100)
-        return;
-    brain->ideas[idx] = idea;
+    brain->setIdea(idx, idea);
 }
 
 const std::string& Dog::getIdea(int idx) const
 {
-    static const std::string empty = "";
-    if (!brain || idx < 0 || idx >= 100)
-        return empty;
-    return brain->ideas[idx];
+    return brain->getIdea(idx);
 }

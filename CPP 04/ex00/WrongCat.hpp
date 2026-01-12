@@ -1,22 +1,21 @@
-# ifndef CAT_HPP
-# define CAT_HPP
+# ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
+# include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : public WrongAnimal
 {
 	protected:
 		std::string type;
 	public:
-		Cat();
-		Cat(std::string name);
-		Cat(const Cat &obj);
-		Cat &operator=(const Cat &obj);
-		~Cat();
+		WrongCat();
+		WrongCat(std::string name);
+		WrongCat(const WrongCat &obj);
+		WrongCat &operator=(const WrongCat &obj);
+		~WrongCat();
 		void makeSound() const;
-		std::string getType() const;
 };
 
 #endif
