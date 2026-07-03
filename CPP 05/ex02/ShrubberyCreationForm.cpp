@@ -28,24 +28,24 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 
 void ShrubberyCreationForm::executeAction() const
 {
-    std::ofstream outfile((_target + "_shrubbery").c_str());
-    if (!outfile)
+    std::ofstream outFile((_target + "_shrubbery").c_str());
+    if (!outFile)
     {
         std::cerr << "Error: Could not open file for writing." << std::endl;
         return;
     }
 
-    outfile << "       _-_" << std::endl;
-    outfile << "    /~~   ~~\\" << std::endl;
-    outfile << " /~~         ~~\\" << std::endl;
-    outfile << "{               }" << std::endl;
-    outfile << " \\  _-     -_  /" << std::endl;
-    outfile << "   ~  \\\\ //  ~" << std::endl;
-    outfile << "_- -   | | _- _" << std::endl;
-    outfile << "  _ -  | |   -_" << std::endl;
-    outfile << "      // \\\\" << std::endl;
+    outFile << "       _-_" << std::endl;
+    outFile << "    /~~   ~~\\" << std::endl;
+    outFile << " /~~         ~~\\" << std::endl;
+    outFile << "{    ~~         }" << std::endl;
+    outFile << " \\  _-     -_  /" << std::endl;
+    outFile << "   ~  \\   //  ~" << std::endl;
+    outFile << "_- -   |   | _- _" << std::endl;
+    outFile << "  _ -  |   |   -_" << std::endl;
+    outFile << "      //   \\\\" << std::endl;
 
-    outfile.close();
+    outFile.close();
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()

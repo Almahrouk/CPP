@@ -20,7 +20,7 @@ Form::Form(const std::string &name, int requiredSignGrade, int requiredExecuteGr
     catch (std::exception & e)
     {
         std::cerr << "Error: " << e.what() << std::endl;
-        throw; // rethrow the exception to indicate failure
+        throw;
     }
 }
 

@@ -10,7 +10,6 @@ class ShrubberyCreationForm : public AForm
         virtual void	executeAction() const;
 
 	public:
-		// Orthodox Canonical Form
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(const std::string & target);
 		ShrubberyCreationForm(const ShrubberyCreationForm & other);

@@ -14,7 +14,7 @@ int main()
 {
 	std::srand(static_cast<unsigned int>(std::time(NULL)));
 
-	/* 1. The exact example given in the subject */
+	/* 1. The example given in the subject */
 	separator("Subject example: makeForm(\"robotomy request\", \"Bender\")");
 	{
 		Intern someRandomIntern;
@@ -22,6 +22,7 @@ int main()
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 		if (rrf != NULL)
 		{
+			std::cout << "---- OK ----" << std::endl;
 			std::cout << *rrf << std::endl;
 			delete rrf;
 		}

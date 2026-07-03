@@ -10,7 +10,6 @@ class PresidentialPardonForm : public AForm
         virtual void	executeAction() const;
 
 	public:
-		// Orthodox Canonical Form
 		PresidentialPardonForm();
 		PresidentialPardonForm(const std::string & target);
 		PresidentialPardonForm(const PresidentialPardonForm & other);

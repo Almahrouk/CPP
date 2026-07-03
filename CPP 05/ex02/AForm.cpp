@@ -103,11 +103,11 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
     this->_isSigned = true;
 }
 
-void AForm::execute(const Bureaucrat & executor) const
+void AForm::execute(const Bureaucrat & bureaucrat) const
 {
 	if (!this->_isSigned)
 		throw AForm::FormNotSignedException();
-	if (executor.getGrade() > this->_requiredExecuteGrade)
+	if (bureaucrat.getGrade() > this->_requiredExecuteGrade)
 		throw AForm::GradeTooLowException();
 	this->executeAction();
 }
@@ -120,3 +120,7 @@ std::ostream & operator<<(std::ostream & os, const AForm & form)
 	   << "grade required to execute: " << form.getRequiredExecuteGrade();
 	return (os);
 }
+
+// void AForm::executeAction() const
+// {
+// }

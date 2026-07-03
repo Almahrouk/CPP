@@ -29,7 +29,7 @@ class AForm
         void beSigned(const Bureaucrat &bureaucrat);
         void incrementGrade();
         void decrementGrade();
-        void execute(const Bureaucrat &executor) const;
+        void execute(const Bureaucrat &bureaucrat) const;
         class GradeTooHighException : public std::exception
         {
             public:

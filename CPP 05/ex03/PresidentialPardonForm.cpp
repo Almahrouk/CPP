@@ -1,7 +1,7 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm()
-    : AForm("PresidentialPardonForm", 25, 5), _target("default")   // <-- not "ShrubberyCreationForm", 145, 137
+    : AForm("PresidentialPardonForm", 25, 5), _target("default")
 {
     std::cout << "PresidentialPardonForm default constructor called" << std::endl;
 }
