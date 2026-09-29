@@ -82,20 +82,6 @@ const char * AForm::FormNotSignedException::what() const throw()
 	return ("Form is not signed");
 }
 
-void AForm::incrementGrade()
-{
-    if (this->_requiredSignGrade <= 1)
-        throw GradeTooHighException();
-    this->_requiredSignGrade--;
-}
-
-void AForm::decrementGrade()
-{
-    if (this->_requiredSignGrade >= 150)
-        throw GradeTooLowException();
-    this->_requiredSignGrade++;
-}
-
 void AForm::beSigned(const Bureaucrat &bureaucrat)
 {
     if (bureaucrat.getGrade() > this->_requiredSignGrade)

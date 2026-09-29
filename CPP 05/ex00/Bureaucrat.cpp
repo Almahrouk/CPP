@@ -14,7 +14,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade
         throw GradeTooLowException();
     this->_grade = grade;
 }
-// throw Bureaucrat::GradeTooHighException(); // fully qualified — always works, anywhere
+// throw Bureaucrat::GradeTooHighException(); // fully qualified - always works, anywhere
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {

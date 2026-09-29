@@ -77,20 +77,6 @@ const char * Form::GradeTooLowException::what() const throw()
     return "Form grade is too low";
 }
 
-void Form::incrementGrade()
-{
-    if (this->_requiredSignGrade <= 1)
-        throw GradeTooHighException();
-    this->_requiredSignGrade--;
-}
-
-void Form::decrementGrade()
-{
-    if (this->_requiredSignGrade >= 150)
-        throw GradeTooLowException();
-    this->_requiredSignGrade++;
-}
-
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
     if (bureaucrat.getGrade() > this->_requiredSignGrade)

@@ -12,8 +12,8 @@ class Form
     private:
         std::string const _name;
         bool _isSigned;
-        int _requiredSignGrade;
-        int _requiredExecuteGrade;
+        int const _requiredSignGrade;
+        int const _requiredExecuteGrade;
     public:
         Form();
         Form(const std::string &name, int requiredSignGrade, int requiredExecuteGrade);
@@ -29,8 +29,6 @@ class Form
 
         // Member functions
         void beSigned(const Bureaucrat &bureaucrat);
-        void incrementGrade();
-        void decrementGrade();
 
         // Exception classes
         class GradeTooHighException : public std::exception
