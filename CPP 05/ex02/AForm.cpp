@@ -109,4 +109,5 @@ std::ostream & operator<<(std::ostream & os, const AForm & form)
 
 // void AForm::executeAction() const
 // {
+//     std::cout << "OKOKOKKO" << std::endl;
 // }
