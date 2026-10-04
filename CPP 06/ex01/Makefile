@@ -1,9 +1,9 @@
-NAME		= bureaucrat
+NAME		= serializer
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS		= main.cpp Bureaucrat.cpp
+SRCS		= main.cpp Serializer.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp Bureaucrat.hpp
+%.o: %.cpp Serializer.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
