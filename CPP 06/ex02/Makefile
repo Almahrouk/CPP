@@ -1,9 +1,9 @@
-NAME		= bureaucrat
+NAME		= base
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS		= main.cpp Bureaucrat.cpp
+SRCS		= main.cpp Base.cpp A.cpp B.cpp C.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp Bureaucrat.hpp
+%.o: %.cpp Base.hpp A.hpp B.hpp C.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
