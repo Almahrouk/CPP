@@ -1,4 +1,4 @@
-NAME		= easyfind
+NAME		= mutantstack
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp easyfind.hpp
+%.o: %.cpp MutantStack.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
