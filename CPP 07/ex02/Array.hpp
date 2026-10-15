@@ -43,36 +43,32 @@ Array<T>::Array(unsigned int n)
     this->_array = new T[n];
     this->_size = n;
     
-    // for (unsigned int i = 0; i < n; i++)
-    //     this->array[i] = 0;
+    for (unsigned int i = 0; i < n; i++)
+        this->_array[i] = '\0';
 }
 
-template <typename T> 
-Array<T>::Array(const Array &src)
+template <typename T>
+Array<T>::Array(const Array<T> &src) : _array(NULL), _size(0)
 {
-    // this->_array = new T[src.n];
-    // this->_size = src.n;
-    // for (unsigned int i = 0; i < this->size(); i++)
-    // {
-    //     this->array[i] = src.array[i];
-    // }
-    this->_array = NULL;
-    this->_size = 0;
     *this = src;
 }
 
-template <typename T> 
+template <typename T>
 Array<T> &Array<T>::operator=(const Array<T> &src)
 {
     if (this != &src)
     {
         T *temp = new T[src._size];
-        for (unsigned int i = 0; i < _size; i++)
-        temp[i] = src._array[i];
+
+        for (unsigned int i = 0; i < src._size; i++)
+            temp[i] = src._array[i];
+
         delete[] _array;
+
         _array = temp;
         _size = src._size;
     }
+
     return *this;
 }
 
