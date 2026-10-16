@@ -59,16 +59,12 @@ Array<T> &Array<T>::operator=(const Array<T> &src)
     if (this != &src)
     {
         T *temp = new T[src._size];
-
         for (unsigned int i = 0; i < src._size; i++)
             temp[i] = src._array[i];
-
         delete[] _array;
-
         _array = temp;
         _size = src._size;
     }
-
     return *this;
 }
 

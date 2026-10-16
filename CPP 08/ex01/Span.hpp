@@ -19,13 +19,17 @@ class Span
         Span &operator=(const Span &src);
         ~Span();
 
-        void addNumber(int num); // use push_back() | if number of elements is >= N -> exception
-        
-        // If there are no numbers stored, or only one, no span can be found. Thus, throw an exception
-        // template <class T>
+        void addNumber(int num);
         int shortestSpan();
         int longestSpan();
-
+        
+        template<typename T>
+        void addRange(T begin, T end)
+        {
+            if (static_cast<unsigned int>(std::distance(begin, end)) > this->N - this->vec.size())
+                throw std::runtime_error("Out Of Range");
+            this->vec.insert(this->vec.end(), begin, end);
+        }
 };
 
 
