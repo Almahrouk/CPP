@@ -189,3 +189,56 @@ bool BitcoinExchange::findRate(
     return true;
 }
 
+int BitcoinExchange::processInput() const
+{
+    if (_inputFile.empty())
+        return EmptyFile;
+    std::ifstream readFile(_inputFile.c_str());
+    if (!readFile.is_open())
+        return FailedOpeningFile;
+    
+    std::string line;
+    if(!std::getline(readFile, line))
+        return EmptyFile;
+    if (trim(line) != "date | value")
+        return InvalidStartLine;
+    
+    while (std::getline(readFile, line))
+    {
+        line = trim(line);
+        if (line.empty())
+            continue;
+        
+        std::string date;
+        double value = 0;
+        double rate = 0;
+
+        switch (validateLine(line, date, value))
+        {
+        case BadInput:
+            std::cerr << "Error: bad input => " << line << std::endl;
+            break;
+        case NotPositive:
+            std::cerr << "Error: not a positive number." << std::endl;
+            break;
+        case TooLarge:
+            std::cerr << "Error: too large number." << std::endl;
+            break;
+        case ValidLine:
+            if (!findRate(date, rate))
+                std::cerr << "Error: not earlier date in database => " << date << std::endl;
+            else
+                std::cout << date << " => " << value << " = " << value * rate << std::endl;
+            break;
+        default:
+            break;
+        }
+    }
+    return SUCCESS;
+}
+
+std::ostream &operator<<(std::ostream &os, const BitcoinExchange &btc)
+{
+    os << btc.getInputFile();
+    return os;
+}
